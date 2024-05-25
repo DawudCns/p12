@@ -266,30 +266,37 @@ li {
 
 /* /////////------------------- SECTION PORTFOLIO ----------------------------///// */
 
+/* Définition de la largeur maximale et de la marge pour l'élément avec l'identifiant "portfolio" */
 #portfolio {
   max-width: 1250px;
   margin: 70px auto;
 }
 
+/* Style pour les éléments <h2>*/
 #portfolio h2 {
   margin: 50px 0 30px 0;
   color: #008000; /* Vert */
 }
 
+/* Style pour le conteneur de la grille */
 .grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-column-gap: 40px;
-  grid-row-gap: 50px;
-  margin: 0 auto;
+  display: grid; /* Affichage en grille */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Colonnes de largeur minimale 300px et maximale de 1 fraction de l'espace disponible */
+  grid-column-gap: 40px; /* Espacement horizontal entre les colonnes */
+  grid-row-gap: 50px; /* Espacement vertical entre les lignes */
+  margin: 0 auto; /* Centrage horizontalement */
 }
 
+/* Style pour les éléments avec la classe "project" */
 .project {
   background-color: #ffffff;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  position: relative;
-  overflow: hidden;
-  height: 400px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Ombre portée légère */
+  position: relative; /* Position relative pour les éléments enfants */
+  overflow: hidden; /* Masquage du contenu débordant */
+  height: 400px; /* Hauteur fixe de 400 pixels */
 }
 
 .project img {
@@ -512,4 +519,57 @@ textarea,
 .footer h3 {
   color: white;
   text-align: center;
+}
+
+/* Styles pour les écrans de taille moyenne, comme les téléphones */
+@media screen and (max-width: 768px) {
+  .header_content {
+    justify-content: center; /* Centrer les éléments horizontalement */
+  }
+
+  .header_content .logo {
+    flex: 1; /* Pour permettre à .logo de s'étendre et de centrer le lien */
+  }
+  .intro span {
+    font-size: 3rem;
+  }
+
+  .section_content {
+    padding: 50px 20px; /* Réduire le rembourrage des sections */
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(250px, 1fr)
+    ); /* Ajuster la grille */
+  }
+  .bienvenue {
+    display: none; /* Cacher l'élément en mode responsive */
+  }
+
+  /* Autres ajustements pour les éléments spécifiques */
+}
+
+/* Styles pour les écrans de petite taille, comme les téléphones */
+@media screen and (max-width: 480px) {
+  .header_content {
+    margin: 0 10px; /* Réduire davantage la marge */
+  }
+
+  .header_content .logo a {
+    font-size: 1.5rem; /* Réduire encore la taille de la police du logo */
+  }
+
+  .section_content {
+    padding: 40px 10px; /* Réduire davantage le rembourrage des sections */
+  }
+  .about_content {
+    display: block; /* Remplacer display: flex; par display: block; */
+  }
+  .about_content .img_about img {
+    width: 100%;
+  }
+
+  /* Autres ajustements pour les éléments spécifiques */
 }
